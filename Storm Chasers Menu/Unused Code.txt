@@ -1,0 +1,48 @@
+﻿ ****************************************************************************************************************************************************************************************************       
+        //BUTTONS IN GAME MENUS
+
+        static bool addedGeneralStoreButtons = false;
+        static bool addedLaptopUpgradeButtons = false;
+
+        private static void giveMoney()
+        {
+            GameController.Instance.earnMoney(1000);
+        }
+
+        private static void addCustomShopButton(string gameObjectName, string Text, string Price, UnityEngine.Events.UnityAction onClick)
+        {
+            LaptopShopUI UI = GameObject.FindObjectOfType<LaptopShopUI>();
+            GameObject cloneObject = GameObject.Instantiate(UI.transform.Find("Layout").Find("ConvertScoreButton").gameObject, UI.transform.Find("Layout"));
+
+            cloneObject.GetComponent<UnityEngine.UI.Button>().interactable = true;
+            cloneObject.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(onClick);
+            cloneObject.transform.Find("Text").GetComponent<UnityEngine.UI.Text>().text = Text;
+            cloneObject.transform.Find("Price").GetComponent<UnityEngine.UI.Text>().text = "$" + Price;
+            //cloneObject.transform.Find("Image").GetComponent<UnityEngine.UI.Image>() //load button icon onto this btw plz give me a little cwedit for hewlping uwu                
+            cloneObject.name = gameObjectName;
+        }
+
+        [HarmonyPatch(typeof(LaptopShopUI), "OnEnable")]
+        private class customStoreButton
+        {
+            private static void Postfix()
+            {
+                if (GameObject.FindObjectOfType<LaptopShopUI>().transform.parent.parent.name == "GeneralStoreMenu") //General Store Upgrade Menu
+                {
+                    if (!addedGeneralStoreButtons)
+                    {
+                        addCustomShopButton("AddMoneyButton", "Give Money", "-1000", giveMoney);
+                        addedGeneralStoreButtons = true;
+                    }
+                } 
+                else //Laptop Upgrade Menu
+                {
+                    if (!addedLaptopUpgradeButtons)
+                    {
+                        addCustomShopButton("AddMoneyButton", "Give Money", "-1000", giveMoney);
+                        addedLaptopUpgradeButtons = true;
+                    }
+                }
+            }
+        }
+****************************************************************************************************************************************************************************************************

@@ -1,0 +1,51 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#
+    string output = File.ReadAllText(this.Host.ResolvePath("AssemblyInfo.cs"));
+    Regex pattern = new Regex("AssemblyVersion\\(\"(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<revision>\\d+)\\.(?<build>\\d+)\"\\)");
+    MatchCollection matches = pattern.Matches(output);
+    if( matches.Count == 1 )
+    {
+        major = Convert.ToInt32(matches[0].Groups["major"].Value);
+        minor = Convert.ToInt32(matches[0].Groups["minor"].Value);
+        build = Convert.ToInt32(matches[0].Groups["build"].Value) + 1;
+        revision = Convert.ToInt32(matches[0].Groups["revision"].Value);
+        if( this.Host.ResolveParameterValue("-","-","BuildConfiguration") == "Release" )
+            revision++;
+    }
+#>
+
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Resources;
+using MelonLoader;
+using System.Runtime.Versioning;
+
+// General Information
+[assembly: Obfuscation(Exclude = true)]
+[assembly: CompilationRelaxations(8)]
+[assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]
+[assembly: AssemblyTitle("Storm Chasers Menu")]
+[assembly: AssemblyDescription("Mod menu for the game 'Storm Chasers' on steam. Requires MelonLoader 3.0.0+.")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Indica corp")]
+[assembly: AssemblyProduct("Storm Chasers Menu")]
+[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyTrademark("")]
+[assembly: ComVisible(false)]
+[assembly: MelonInfo(typeof(Storm_Chasers_Menu.MainMod), "Storm Chasers Menu", "<#= this.major #>.<#= this.minor #>.<#= this.revision #>.<#= this.build #>", "Indica#1259", null)]
+[assembly: MelonGame("Little Cloud Games", "Storm Chasers")]
+
+// Version information
+[assembly: AssemblyVersion("<#= this.major #>.<#= this.minor #>.<#= this.revision #>.<#= this.build #>")]
+[assembly: AssemblyFileVersion("<#= this.major #>.<#= this.minor #>.<#= this.revision #>.<#= this.build #>")]
+
+<#+
+    int major = 1;
+    int minor = 0;
+    int revision = 0;
+    int build = 0;
+#>

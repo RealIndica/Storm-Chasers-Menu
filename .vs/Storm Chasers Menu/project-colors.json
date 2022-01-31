@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c55ba7e6-d6c8-4312-9203-61a2adca090a": {
+      "ProjectGuid": "c55ba7e6-d6c8-4312-9203-61a2adca090a",
+      "DisplayName": "Storm Chasers Menu",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
