@@ -1,0 +1,10 @@
+C:\Users\Leon\source\repos\Storm Chasers Menu\Obfuscator\bin\Release\Obfuscator.exe.config
+C:\Users\Leon\source\repos\Storm Chasers Menu\Obfuscator\bin\Release\Obfuscator.exe
+C:\Users\Leon\source\repos\Storm Chasers Menu\Obfuscator\bin\Release\Obfuscator.pdb
+C:\Users\Leon\source\repos\Storm Chasers Menu\Obfuscator\bin\Release\dnlib.dll
+C:\Users\Leon\source\repos\Storm Chasers Menu\Obfuscator\obj\Release\Obfuscator.csproj.CoreCompileInputs.cache
+C:\Users\Leon\source\repos\Storm Chasers Menu\Obfuscator\obj\Release\Obfuscator.csproj.CopyComplete
+C:\Users\Leon\source\repos\Storm Chasers Menu\Obfuscator\obj\Release\Obfuscator.exe
+C:\Users\Leon\source\repos\Storm Chasers Menu\Obfuscator\obj\Release\Obfuscator.pdb
+C:\Users\Leon\source\repos\Storm Chasers Menu\Obfuscator\obj\Release\Obfuscator.csproj.AssemblyReference.cache
+C:\Users\Leon\source\repos\Storm Chasers Menu\Obfuscator\obj\Release\Obfuscator.csproj.SuggestedBindingRedirects.cache

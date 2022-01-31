@@ -1,0 +1,8 @@
+C:\Users\Leon\source\repos\Storm Chasers Menu\MD5Generator\obj\Release\MD5Signer.csproj.CoreCompileInputs.cache
+C:\Users\Leon\source\repos\Storm Chasers Menu\MD5Generator\bin\Release\MD5Signer.exe.config
+C:\Users\Leon\source\repos\Storm Chasers Menu\MD5Generator\bin\Release\MD5Signer.exe
+C:\Users\Leon\source\repos\Storm Chasers Menu\MD5Generator\bin\Release\MD5Signer.pdb
+C:\Users\Leon\source\repos\Storm Chasers Menu\MD5Generator\obj\Release\MD5Signer.exe
+C:\Users\Leon\source\repos\Storm Chasers Menu\MD5Generator\obj\Release\MD5Signer.pdb
+C:\Users\Leon\source\repos\Storm Chasers Menu\MD5Generator\obj\Release\MD5Signer.csproj.AssemblyReference.cache
+C:\Users\Leon\source\repos\Storm Chasers Menu\MD5Generator\obj\Release\MD5Signer.csproj.SuggestedBindingRedirects.cache
